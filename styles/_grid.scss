@@ -1,0 +1,272 @@
+// Flex grid system //
+.flex {
+	display: flex;
+	&.one {
+		flex: 1;
+	}
+
+	&.two {
+		flex: 2;
+	}
+
+	&.three {
+		flex: 3;
+	}
+
+	&.four {
+		flex: 4;
+	}
+
+	&.five {
+		flex: 5;
+	}
+
+	&.six {
+		flex: 6;
+	}
+
+	&.seven {
+		flex: 7;
+	}
+
+	&.row {
+		flex-direction: row;
+		align-items: center;
+		_::-webkit-full-page-media, _:future, :root {
+			align-items: flex-start; // Safari fix
+		}
+
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			flex-basis: auto; // IE11 fix
+
+		}
+
+		@media only screen and (max-width: $container-size-m) {
+			flex-direction: column;
+			align-items: flex-start; // Safari fix
+			align-items: initial; // Safari fix
+		}
+
+		&.mobile-reverse {
+			@media only screen and (max-width: $container-size-m) {
+				flex-direction: column-reverse;
+			}
+			> div  {
+				&:nth-child(2) {
+					margin-bottom: 2rem;
+				}
+			}
+		}
+
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+	
+	&.mobile-column {
+		@media only screen and (max-width: $container-size-m) {
+			flex-direction: column;
+		}
+	}
+
+	&.mobile-row {
+		@media only screen and (max-width: $container-size-m) {
+			flex-direction: row;
+		}
+	}
+
+	&.no-grow {
+		flex-grow: 0;
+	}
+	&.no-shrink {
+		flex-shrink: 0;
+	}
+	&.align-center {
+		align-items: center;
+	}
+
+	&.align-right {
+		text-align: right;
+	}
+
+	&.align-start {
+		align-self: flex-start;
+	}
+	&.align-items-start {
+		align-items: flex-start;
+	}
+	&.align-items-center {
+		justify-content: center;
+	}
+	&.align-end {
+		justify-content: flex-end;
+	}
+	&.basis-auto {
+		flex-basis: auto;
+	}
+	&.align-self-center {
+		align-self: center;
+	}
+	&.stretch {
+		align-self: stretch;
+	}
+
+	&.margin-right-xs {
+		margin-right: 1rem;
+	}
+
+	&.margin-right-s {
+		margin-right: 1.5rem;
+	}
+
+	&.margin-right-m {
+		margin-right: 3rem;
+	}
+
+	&.margin-right-l {
+		margin-right: 5rem;
+	}
+
+	&.margin-bottom-m {
+		margin-bottom: 3rem;
+	}
+
+	&.margin-bottom-s {
+		margin-bottom: 1.5rem;
+	}
+
+	&.margin-bottom-xs {
+		margin-bottom: 1rem;
+	}
+
+	&.margin-bottom-xxs {
+		margin-bottom: 0.5rem;
+	}
+
+}
+
+// Page wrapper
+.page-wrapper {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+	flex: 1;
+	flex-direction: column;
+	position: relative;
+	overflow: auto;
+}
+
+// Page flex grid
+.page-row-wrapper {
+	display: flex;
+	flex: 0; // don't grow to fill height
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	flex-basis: auto; // IE11 fix
+	scroll-snap-align: start;
+
+	// Add padding to block
+	&.padding-top-bot-xs {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	// Add padding to block
+	&.padding-top-bot-s {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	// Add padding to block
+	&.padding-top-bot-m {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+
+		@media only screen and (max-width: $container-size-m) {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+
+	}
+
+	// Add padding to block
+	&.padding-top-bot-ml {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+		@media only screen and (max-width: $container-size-m) {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+
+	}
+
+	// Add padding to bock
+	&.padding-top-bot-l {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		@media only screen and (max-width: $container-size-m) {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+
+	}
+
+	// Add padding to bock
+	&.padding-top-bot-xl {
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+		@media only screen and (max-width: $container-size-m) {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+
+	}
+
+	&.padding-top {
+		padding-top: 3rem;
+	}
+
+	&.padding-bot {
+		padding-bottom: 3rem;
+	}
+	
+
+	// Limit content width inside block
+	> .content-wrapper {
+		@include content-wrapper;
+
+		// use this class in combination with the following
+		>.base {
+			display: flex;	
+			flex-direction: column;
+			// Space between blocks
+
+			&.margin-right {
+				margin-right: 2rem;
+				width: calc(50% - 2rem);
+				flex-basis: calc(50% - 2rem);
+				@media only screen and (max-width: $container-size-ml) {
+					margin-right: 0;
+					width: 100%;
+					flex-basis: 100%;
+					margin-bottom: 2rem;
+				}
+			}
+
+			// Space between blocks
+			&.margin-left {
+				margin-left: 2rem;
+				width: calc(50% - 2rem);
+				flex-basis: calc(50% - 2rem);
+				@media only screen and (max-width: $container-size-ml) {
+					margin-left: 0;
+					width: 100%;
+					flex-basis: 100%;
+				}
+			}
+		}
+
+	}
+}
