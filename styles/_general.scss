@@ -153,14 +153,15 @@ ul {
 
 		.header-icon {
 			position: absolute;
-			right: 0;
-			width: 60rem;
+			right: 5rem;
+			width: 50rem;
 			height: auto;
 			display: block;
 			color: $lig-col;
-			opacity: 0.2;
+			opacity: 0.4;
 			pointer-events: none;
-			
+			z-index: 0;
+
 			@media only screen and (max-width: $container-size-m) {
 				width: 35rem;
 				left: 50%;
@@ -168,24 +169,21 @@ ul {
 
 			}
 
-			svg {
+			img {
 				width: 100%;
 				animation-name: moveIconUpDown;
-				animation-duration: 5s;
+				animation-duration: 3s;
 				animation-iteration-count: infinite;
 				animation-timing-function: ease-in-out;
-				animation-fill-mode: forwards;
+				animation-direction: alternate;
 			}
 
 			@keyframes moveIconUpDown {
 				0% {
-					transform: scale(1) translateY(-0.2rem);
-				}
-				50% {
-					transform: scale(1.05) translateY(0.1rem);
+					transform: scale(1) translateY(-0.3rem);
 				}
 				100% {
-					transform: scale(1) translateY(-0.2rem);
+					transform: scale(1.1) translateY(0.1rem);
 				}
 			}
 			
@@ -202,11 +200,13 @@ ul {
 	h1 {
 		color: $lig-col;
 		margin-bottom: 1.5rem;
+		z-index: 2;
 	}
 
 	h2 {
 		color: $lig-col;
 		margin-bottom: 4rem;
+		z-index: 2;
 		@media only screen and (max-width: $container-size-m) {
 			margin-bottom: 2rem;
 		}
@@ -218,6 +218,7 @@ ul {
 
 	.button-bar {
 		display: flex;
+		z-index: 2;
 	}
 
 	.scroll-link {
