@@ -137,6 +137,10 @@ img {
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
  */
+button {
+  all: unset;
+}
+
 button,
 input,
 optgroup,
@@ -989,6 +993,7 @@ ul li {
   overflow-y: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  content-visibility: auto;
   margin-top: 0;
   margin-bottom: 0.5rem;
   padding-left: 0;
@@ -1037,7 +1042,7 @@ ul li {
 .projects-slider ul li:last-of-type {
   margin-right: 0;
 }
-.projects-slider ul li h4 {
+.projects-slider ul li h3 {
   color: inherit;
   font-family: "Permanent Marker", cursive;
   font-size: 2rem;

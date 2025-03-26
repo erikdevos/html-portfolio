@@ -425,6 +425,7 @@ ul {
 		overflow-y: auto;
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
+		content-visibility: auto;
 		margin-top: 0;
 		margin-bottom: 0.5rem;
 		padding-left: 0;
@@ -466,7 +467,6 @@ ul {
 				@media only screen and (max-width: $container-size-s) {
 					width: 75vw;
 				}
-
 			}
 
 			img {
@@ -481,7 +481,7 @@ ul {
 				margin-right: 0;
 			}
 
-			h4 {
+			h3 {
 				color: inherit;
 				font-family: $fon-fam-sec;
 				font-size: 2rem;

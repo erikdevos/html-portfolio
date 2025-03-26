@@ -25,16 +25,9 @@
 		
 		<!-- Custom styling -->
 		<link rel="stylesheet" href="/styles/style.css?v=1">
-		
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
-		
-		<!-- ScrollTo -->
-		<script type="text/javascript" src="js/jquery.scrollTo.min.js?t=1678721666"></script>
-		
+
 		<!-- Animate on Scroll -->
-		<link href="styles/aos.css?t=1" rel="stylesheet">
-		
+		<link href="/styles/aos.css?t=1" rel="stylesheet">
 	</head>
 
 	<body>
@@ -44,20 +37,23 @@
 			<!-- Homepage header -->
 			<section class="page-row-wrapper header-wrapper" style="background-image: url(resources/header/header-image.webp);">
 				<div class="content-wrapper flex column align-center">
-	
+
 					<!-- Hero image -->
 					<div class="content-wrapper header-content-wrapper column flex">
 						<h1 data-aos="fade-in" data-aos-duration="7000" data-aos-delay="200">Erik de Vos</h1>
-	
 						<h2 data-aos="fade-in" data-aos-duration="7000" data-aos-delay="1000" >Creative Front-end developer</h2>
 	
 						<div class="button-bar" data-aos="fade-in" data-aos-duration="7000" data-aos-delay="2000">
-							<div class="cta-button scroll-link" id="scroll-about" onclick="javascript:$.scrollTo('#experience', 1000)">Experience <span class="arrow down">&rsaquo;</span></div> 
-							<div class="cta-button scroll-link" id="scroll-projects" onclick="javascript:$.scrollTo('#projects', 1000)">Projects <span  class="arrow down">&rsaquo;</span></div>
+							<button class="cta-button scroll-link" id="scroll-about" onclick="scrollToElement('experience')">
+								Experience <span class="arrow down">&rsaquo;</span>
+							</button>
+							<button class="cta-button scroll-link" id="scroll-projects" onclick="scrollToElement('projects')">
+								Projects <span class="arrow down">&rsaquo;</span>
+							</button>
 						</div>
 	
 						<div class="header-icon">
-							<img src="resources/header-icon.svg" alt="" />
+							<img src="resources/header-icon.svg" alt="" role="presentation" />
 						</div>
 					</div>
 				</div>
@@ -68,30 +64,38 @@
 				<div class="anchor" id="experience"></div>
 	
 				<div class="content-wrapper column">
-	
 					<div class="flex row one margin-bottom-m">
-						
 						<div class="flex column one content-text margin-right-l margin-bottom-l" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="10">
-	
-							<h2>Experience</h2>
-							<p>Over the course of 15 years, I have worked for various types of companies, gaining experience in a wide range of projects, including big SAAS initiatives, educational software, giant webshops, and agency work for commercial clients.</p>
-							<p>As a creative Front-end developer, I take pride in my deep knowledge of specific browser issues. I love building a new project from the ground up, but have also fallen in love with Vue and Nuxt. I have worked with many different CMSs, from custom-built management systems to popular open source platforms like WordPress and Umbraco.</p>
-							<p>In addition, my experience with PHP and databases have given me a core understanding of back-end techniques, enabling me to work in existing projects and communicate with developers more clearly.</p>
+							<h2>Who is Erik</h2>
+							<p>As a person and a collegue I'm a calm and relaxed person. I'm very pragmatic in my solutions. But, you also won't hear me say no often, I always try to find a way!
+							<p>What I also love is learning new things, regardless of the field it's related to. I'm always up for a good challenge.</p>
+							<p>At home I love to spend time with my family and my pets. Outside of that you can find me at the local arthouse cinema or watching the new big blockbuster. Music is also a big passion for me, both listening and producing it.</p>
+							<p>I also have a whole bunch of work-related hobbby projects. For example I have an app for deciding our next meal, and a pocket monsters game.<p>
 						</div>	
 	
 						<div class="flex one align-start" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="10">
 							<img src="resources/device.webp" alt="">
 						</div>
+					</div>
+
+					<div class="flex row one mobile-reverse margin-bottom-m">
+						
+						<div class="flex one align-start margin-right-l margin-bottom-l" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="10">
+							<img src="resources/device.webp" alt="">
+						</div>
+
+						<div class="flex column one content-text" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="10">
+							<h2>Experience</h2>
+							<p>Over the course of 15 years, I have worked for various types of companies, gaining experience in a wide range of projects, including big SAAS initiatives, educational software, giant webshops, and agency work for commercial clients.</p>
+							<p>As a creative Front-end developer, I take pride in my deep knowledge of specific browser issues. I love building a new project from the ground up, but have also fallen in love with Vue and Nuxt. I have worked with many different CMSs, from custom-built management systems to popular open source platforms like WordPress and Umbraco.</p>
+							<p>In addition, my experience with PHP and databases have given me a core understanding of back-end techniques, enabling me to work in existing projects and communicate with developers more clearly.</p>
+						</div>
 	
 					</div>
 	
-					<div class="flex row mobile-reverse one">
-						<div class="flex one align-start margin-right-l" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="10">
-							<img src="resources/code.webp" alt="">
-						</div>
-	
+					<div class="flex row one">
 						<div class="flex column one">
-	
+
 							<h2 class="dates-title" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="10">Why me?</h3>
 	
 							<ul class="usps" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50">
@@ -106,7 +110,10 @@
 							</ul>
 	
 						</div>
-	
+						<div class="flex one align-start margin-right-l" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="10">
+							<img src="resources/code.webp" alt="">
+						</div>
+
 					</div>
 	
 				</div>
@@ -131,91 +138,99 @@
 						<ul>
 							<li>
 								<a href="https://www.juwelierburger.com" target="_blank" class="project-image">
-									<img src="/resources/projects/juwelier-burger.webp" alt="Juwelier Burger screenshot" title="Juwelier Burger">
+									<img src="/resources/projects/juwelier-burger.webp" alt="Juwelier Burger screenshot">
 								</a>
-								<h4 class="project-title">Juwelier Burger</h4>
+								<h3>Juwelier Burger</h3>
 								<p>This is one of the largest online retailers for pre-owned watches in the world. The high-end webshop boasts a plethora of animations and small user interactions, enhancing the user experience.</p>
 							</li>
 							<li>
 								<a href="https://www.filipucci.nl" target="_blank" class="project-image">
-									<img src="/resources/projects/filipucci.webp" alt="Filipucci Juweliers screenshot" title="Filipucci Juweliers">
+									<img src="/resources/projects/filipucci.webp" alt="Filipucci Juweliers screenshot">
 								</a>
-								<h4 class="project-title">Filipucci Juweliers</h4>
+								<h3>Filipucci Juweliers</h3>
 								<p>High-end jeweler with a custom webshop featuring plenty of unique animations and a strong focus on providing a top-notch user experience.
 							</li>
 							<li>
 								<a href="https://www.banenrijklimburg.nl" target="_blank" class="project-image">
-									<img src="/resources/projects/banenrijklimburg.webp" alt="Banenrijk Limburg screenshot" title="Banenrijk Limburg">
+									<img src="/resources/projects/banenrijklimburg.webp" alt="Banenrijk Limburg screenshot">
 								</a>
-								<h4 class="project-title">Banenrijk Limburg</h4>
+								<h3>Banenrijk Limburg</h3>
 								<p>Modern job-offer site with a focus on speed and animation to stand out from competitors.</p>
 							</li>
 							<li>
 								<a href="https://www.vinciowonen.nl" target="_blank" class="project-image">
-									<img src="/resources/projects/vincio-wonen.webp" alt="Vinciowonen screenshot" title="Vincio wonen">
+									<img src="/resources/projects/vincio-wonen.webp" alt="Vinciowonen screenshot">
 								</a>
-								<h4 class="project-title">Vincio Wonen</h4>
+								<h3>Vincio Wonen</h3>
 								<p>Local housing foundation. Our aim was to make complex information easy to access for a wide range of visitors.</p>
 							</li>
 							<li>
 								<a href="https://www.tegek.be" target="_blank" class="project-image">
-									<img src="/resources/projects/tegek.webp" alt="TeGek!? screenshot" title="TeGek!?">
+									<img src="/resources/projects/tegek.webp" alt="TeGek!? screenshot">
 								</a>
-								<h4 class="project-title">Tegek!?</h4>
+								<h3>Tegek!?</h3>
 								<p>Mental health campaign by the Belgium government. Unique design with a focus on discovery.</p>
 							</li>
 							<li>
 								<a href="https://www.odettelunettes.com" target="_blank" class="project-image">
-									<img src="/resources/projects/odette-lunettes.webp" alt="Odette Lunettes screenshot" title="Odette Lunettes">
+									<img src="/resources/projects/odette-lunettes.webp" alt="Odette Lunettes screenshot">
 								</a>
-								<h4 class="project-title">Odette Lunettes</h4>
+								<h3>Odette Lunettes</h3>
 								<p>Global eyewear brand with a unique design approach based on their visual identity.</p>
 							</li>
 							<li>
 								<a href="https://www.sad.be" target="_blank" class="project-image">
 									<img src="/resources/projects/sad.webp" alt="SAD screenshot" title="SAD.be">
 								</a>
-								<h4 class="project-title">SAD - Sint-Annendael</h4>
+								<h3>SAD - Sint-Annendael</h3>
 								<p>Mental and geriatric care provider with a clear and structured website for easy access to information.</p>
 							</li>
 	
 							<li>
 								<a href="https://www.pouderoyentonnaer.nl/" target="_blank" class="project-image">
-									<img src="/resources/projects/pouton.webp" alt="Pouderoyen Tonnaer" title="Pouderoyen Tonnaer">
+									<img src="/resources/projects/pouton.webp" alt="Pouderoyen Tonnaer">
 								</a>
-								<h4 class="project-title">Pouderoyen Tonnaer</h4>
+								<h3>Pouderoyen Tonnaer</h3>
 								<p>Environmental and city planning, environment and law. Animations and a fresh style make it fresh.</p>
 							</li>
 	
 	
 							<li>
 								<a href="https://www.lortyeshop.eu/" target="_blank" class="project-image">
-									<img src="/resources/projects/lortye.webp" alt="L'Ortye shop" title="L'Ortye shop">
+									<img src="/resources/projects/lortye.webp" alt="L'Ortye shop">
 								</a>
-								<h4 class="project-title">L'Ortye shop</h4>
+								<h3>L'Ortye shop</h3>
 								<p>Why call or e-mail when you can order your containers or materials directly from the website?</p>
+							</li>
+
+							<li>
+								<a href="https://www.merutravel.nl/" target="_blank" class="project-image">
+									<img src="/resources/projects/merutravel.webp" alt="Meru Travel">
+								</a>
+								<h3>Meru Travel</h3>
+								<p>Book Unique travels to Asia. We worked to make booking complex trips fun, informative and understandable.</p>
 							</li>
 							
 	
 							<li>
 								<a href="https://youlearn.ou.nl/web/guest/welkom" target="_blank" class="project-image">
-									<img src="/resources/projects/youlearn.webp" alt="yOUlearn" title="yOUlearn">
+									<img src="/resources/projects/youlearn.webp" alt="yOUlearn">
 								</a>
-								<h4 class="project-title">yOUlearn (2016)</h4>
+								<h3>yOUlearn (2016)</h3>
 								<p>Remote learning for the Open University. I've worked on this project's ongoing development improving usability for the experience.</p>
 							</li>
 	
 							<li>
 								<a href="https://www.greenhousegroup.com/en" target="_blank" class="project-image">
-									<img src="/resources/projects/bannerconnect.webp" alt="Bannerconnect" title="Bannerconnect">
+									<img src="/resources/projects/bannerconnect.webp" alt="Bannerconnect">
 								</a>
-								<h4 class="project-title">CAPPS (2014)</h4>
+								<h3>CAPPS (2014)</h3>
 								<p>Various projects for Bannerconnect (Now called Greenhouse). Data visualisation, graphic design, UX design.</p>
 							</li>
 						</ul>
 	
 						<div class="button-bar">
-							<div class="cta-button paging-next">Next <span class="arrow right">›</span></div>
+							<button class="cta-button paging-next">Next <span class="arrow right">›</span></button>
 						</div>
 					</div>
 	
@@ -232,30 +247,9 @@
 			</section>
 		</footer>
 
-		<script src="js/aos.js?t=1"></script>
-
-		<script type="text/javascript">
-		// Initialize Animate On Scroll animations
-		AOS.init();
-		</script>
-		
-		<script>
-		// Projects slider
-		$(".projects-slider .paging-next").click(function() {
-			console.log("Next");
-			const parentWidth = $(".projects-slider").width(); // get the width of the parent element
-			const $sliderUl = $(".projects-slider ul");
-			const currentScroll = $sliderUl.scrollLeft(); // get the current scroll position
-			const maxScroll = $sliderUl[0].scrollWidth - parentWidth; // get the maximum scroll position
-			
-			if (currentScroll >= maxScroll) {
-				$sliderUl.animate({scrollLeft: 0}, "fast"); // scroll back to the first item
-			} else {
-				$sliderUl.animate({scrollLeft: "+=" + parentWidth / 2}, "fast"); // scroll to the next item
-			}
-		});
-		
-		</script>
+		<!-- Scripting -->
+		<script src="js/aos.js" type="text/javascript"></script>
+		<script src="js/scripts.js" type="text/javascript"></script>
 			
 		<!-- Hi! :) -->
 	</body>
